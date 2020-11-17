@@ -9,7 +9,6 @@ export default async function hydratableModule() {
       path: join(__dirname, "components"),
       pattern: "**/*.vue",
       prefix: "nuxt",
-      global: isGlobal,
     });
   });
 
