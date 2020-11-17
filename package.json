@@ -1,6 +1,6 @@
 {
   "name": "@blokwise/dynamic",
-  "version": "1.0.0-0",
+  "version": "1.0.0",
   "description": "Load components initialized through @nuxt/components dyamically.",
   "repository": "blokwise/dynamic",
   "main": "src/module.js",
