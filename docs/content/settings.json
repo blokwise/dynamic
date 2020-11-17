@@ -1,0 +1,10 @@
+{
+  "title": "Dynamic components for nuxt.js",
+  "url": "dynamic.blokwise.io",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "blokwise/dynamic",
+  "twitter": "@julianderungs"
+}

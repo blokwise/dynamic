@@ -1,0 +1,20 @@
+{
+  "name": "@blokwise/dynamic",
+  "version": "1.0.0-0",
+  "description": "Load components initialized through @nuxt/components dyamically.",
+  "repository": "blokwise/dynamic",
+  "main": "src/module.js",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "keywords": [
+    "nuxtjs",
+    "nuxt/components"
+  ],
+  "author": "Julian Derungs <julian.derungs@primesystems.ch>",
+  "license": "ISC",
+  "dependencies": {
+    "consola": "^2.15.0",
+    "vue-lazy-hydration": "1.0.0-beta.14"
+  }
+}
