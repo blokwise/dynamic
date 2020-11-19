@@ -5,19 +5,43 @@ position: 3
 category: Guide
 ---
 
-## Dynamic component
+## Props
 
-The dynamic component will be loaded as `NuxtDynamic`. The component will be loaded wheter you pass the name prefix or not. So in the following case it could load a component called `Logo` without prefix or a component called `BlokwiseLogo` which is prefixed with `Blokwise` according to `@nuxt/components` configuration of your project / third party libraries.
+### `name`
+
+- **Type**: `String`
+- **Required**: `true`
+
+The name of the component which should be imported.
+If the component was initialized with a prefix in `@nuxt/components` config, it should be loaded as such. Nevertheless it is possible to **ommit the prefix to automatically detect the right component** _(if there are no conflincting names)_.
+
+### `hydration`
+
+- **Type**: `String`
+- **Default**: `'WhenIdle'`
+- _Options_: `'WhenIdle'`, `'WhenVisible'`, `'OnInteraction'`, `'SsrOnly'`
+
+The hydration prop controls **when / how the component will be hydrated**. The hydration is implemented with `vue-lazy-hydration` thanks to [Markus Oberlehner](https://github.com/maoberlehner/vue-lazy-hydration).
+
+## NuxtDynamic
+
+Use `NuxtDynamic` to **auto import any component** which is initialized through `@nuxt/components` _dynamically_.
 
 ```vue
 <template>
   <NuxtDynamic name="Logo" />
+
+  <NuxtDynamic
+    v-for="(component, i) in ['Logo', 'Grid', 'Nav']"
+    :key="i"
+    :name="component"
+  />
 </template>
 ```
 
-## Load the component lazily
+## LazyNuxtDynamic
 
-The dynamic component can be loaded lazily as `LazyNuxtDynamic`.
+Use `LazyNuxtDynamic` if you want the component itself being imported lazily.
 
 ```vue
 <template>

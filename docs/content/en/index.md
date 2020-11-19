@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: ""
+description: "Dynamic components for @nuxt/components"
 position: 1
 category: ""
 features:
