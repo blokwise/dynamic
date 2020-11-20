@@ -1,1 +1,17 @@
+node_modules
+*.iml
+.idea
+*.log*
+.nuxt
+.vscode
+.DS_Store
+coverage
+dist
+sw.*
+.env
+publication
+
 docs
+test
+jest.config.js
+babel.config.js
