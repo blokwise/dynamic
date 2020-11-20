@@ -5,7 +5,8 @@
   "repository": "blokwise/dynamic",
   "main": "src/module.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "jest",
+    "dev": "nuxt dev test/fixture"
   },
   "keywords": [
     "nuxtjs",
@@ -16,5 +17,12 @@
   "dependencies": {
     "consola": "^2.15.0",
     "vue-lazy-hydration": "1.0.0-beta.14"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.1",
+    "@nuxt/test-utils": "^0.0.1",
+    "jest": "^26.6.3",
+    "nuxt": "^2.14.7",
+    "playwright": "^1.6.2"
   }
 }
