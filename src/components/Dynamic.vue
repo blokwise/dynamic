@@ -28,6 +28,7 @@ import {
   hydrateWhenVisible,
   hydrateSsrOnly,
 } from "vue-lazy-hydration";
+import { toPascalCase } from "./../utils/cases";
 
 // inspiration for slot handling:
 // https://gist.github.com/loilo/73c55ed04917ecf5d682ec70a2a1b8e2
@@ -59,9 +60,9 @@ export default {
     },
 
     componentLoader() {
-      const loaders = [...this.$nuxtDynamic.prefixes, ""]
+      const loaders = ["", ...this.$nuxtDynamic.prefixes]
         .map((prefix) => {
-          const name = `Lazy${prefix}${this.name}`;
+          const name = `Lazy${prefix}${toPascalCase(this.name)}`;
           return name in this.$nuxtDynamic.loaders
             ? this.$nuxtDynamic.loaders[name]
             : null;

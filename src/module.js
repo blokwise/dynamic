@@ -1,5 +1,6 @@
 import { join, resolve } from "path";
 import consola from "consola";
+import { toPascalCase } from "./utils/cases";
 
 export default async function hydratableModule() {
   const logger = consola.withScope("@blokwise/dynamic");
@@ -22,7 +23,8 @@ export default async function hydratableModule() {
           .map((c) => {
             const filename = c.filePath.split("\\").pop();
             const componentName = filename.replace(".vue", "");
-            return c.pascalName.replace(componentName, "");
+            const re = new RegExp(`${toPascalCase(componentName)}$`);
+            return c.pascalName.replace(re, "");
           })
       ),
     ];
