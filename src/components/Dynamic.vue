@@ -3,7 +3,7 @@
     v-if="lazyComponent"
     :is="lazyComponent"
     v-bind="$attrs"
-    class="blokwise__lazy"
+    class="blokwise__dynamic"
     v-on="$listeners"
   >
     <!-- pass through normal slots -->

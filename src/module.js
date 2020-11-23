@@ -2,7 +2,7 @@ import { join, resolve } from "path";
 import consola from "consola";
 import { toPascalCase } from "./utils/cases";
 
-export default async function hydratableModule() {
+export default async function dynamicModule({ withConsole = false }) {
   const logger = consola.withScope("@blokwise/dynamic");
 
   this.nuxt.hook("components:dirs", (dirs) => {
@@ -14,7 +14,6 @@ export default async function hydratableModule() {
   });
 
   this.nuxt.hook("components:extend", (components) => {
-    // there are a default import and a lazy (async) import for every component found
     // grab all possible prefixes
     const prefixes = [
       ...new Set(
@@ -29,24 +28,25 @@ export default async function hydratableModule() {
       ),
     ];
 
-    // add nuxt-components plugin to inject the array of detected components
-    const hydratableComponents = components.filter((c) => !c.global && c.async);
+    // there is a default import and a lazy (async) import for each component
+    // add plugin to inject the array of async components
+    const asyncComponents = components.filter((c) => !c.global && c.async);
     this.addPlugin({
       src: resolve(__dirname, "plugins/dynamic.js"),
-      options: { components: hydratableComponents, prefixes },
+      options: { components: asyncComponents, prefixes },
     });
 
-    logger.success({
-      message: "hydratables ready",
-      additional: `Module @blokwise/dynamic successfully initialized.\nReady to hydrate ${
-        hydratableComponents.length
-      } lazy dynamic components (with prefixes ${prefixes
-        .map((prefix) => `'${prefix}'`)
-        .join(
-          ", "
-        )}).\n\nThis allows the developer to load components detected by @nuxt/components lazily as dynamic components.\nRead docs: https://dynamic.blokwise.io`,
-      badge: true,
-    });
+    if (withConsole) {
+      logger.success({
+        message: "auto import for dynamic components ready",
+        additional: `Module @blokwise/dynamic successfully registered.\nReady to auto import ${
+          asyncComponents.length
+        } items as dynamic components lazily (with prefixes: ${prefixes
+          .map((prefix) => `'${prefix}'`)
+          .join(", ")}).\nRead docs: https://dynamic.blokwise.io`,
+        badge: true,
+      });
+    }
   });
 
   return true;
