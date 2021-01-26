@@ -3,6 +3,10 @@
   "version": "1.0.5",
   "description": "Load components initialized through @nuxt/components dyamically.",
   "repository": "blokwise/dynamic",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.com"
+  },
   "main": "src/module.js",
   "scripts": {
     "test": "jest",
