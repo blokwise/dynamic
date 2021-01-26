@@ -34,6 +34,8 @@ import { toPascalCase } from "./../utils/cases";
 // https://gist.github.com/loilo/73c55ed04917ecf5d682ec70a2a1b8e2
 export default {
   name: "Dynamic",
+  
+  inheritAttrs: false,
 
   props: {
     name: {
