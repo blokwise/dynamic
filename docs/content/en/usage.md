@@ -19,7 +19,7 @@ If the component was initialized with a prefix in `@nuxt/components` config, it 
 
 - **Type**: `String`
 - **Default**: `'WhenIdle'`
-- _Options_: `'WhenIdle'`, `'WhenVisible'`, `'OnInteraction'`, `'SsrOnly'`
+- _Options_: `'WhenIdle'`, `'WhenVisible'`, `'OnInteraction'`, `'Never'`
 
 The hydration prop controls **when / how the component will be hydrated**. The hydration is implemented with `vue-lazy-hydration` thanks to [Markus Oberlehner](https://github.com/maoberlehner/vue-lazy-hydration).
 
