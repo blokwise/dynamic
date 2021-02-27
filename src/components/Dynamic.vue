@@ -25,7 +25,7 @@ import {
   hydrateOnInteraction,
   hydrateWhenIdle,
   hydrateWhenVisible,
-  hydrateSsrOnly,
+  hydrateNever,
 } from "vue-lazy-hydration";
 import { toPascalCase } from "./../utils/cases";
 
@@ -46,7 +46,7 @@ export default {
      *   OnInteraction,
      *   WhenIdle,
      *   WhenVisible,
-     *   SsrOnly,
+     *   Never,
      * ]
      */
     hydration: {
@@ -83,7 +83,7 @@ export default {
     hydrateOnInteraction: hydrateOnInteraction,
     hydrateWhenIdle: hydrateWhenIdle,
     hydrateWhenVisible: hydrateWhenVisible,
-    hydrateSsrOnly: hydrateSsrOnly,
+    hydrateNever: hydrateNever,
   },
 };
 </script>
