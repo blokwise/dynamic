@@ -4,7 +4,7 @@ export default (ctx, inject) => {
   
   // now we are going to inject all the dynamic webpack imports to each component as single property with its own chunk
   const loaders = {
-    <%=options.components.filter(c => c.async).map(c => {
+    <%=options.components.map(c => {
       const exp = c.export === 'default' ? `c.default || c` : `c['${c.export}']`
       return `  ${c.pascalName}: () => import('${relativeToBuild(c.filePath)}' /* webpackChunkName: "${c.chunkName.replace(/^.*?:/, '')}" */).then(c => ${exp})`
     }).join(',\n    ') %>
