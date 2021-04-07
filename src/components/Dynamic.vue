@@ -25,7 +25,7 @@ import {
   hydrateOnInteraction,
   hydrateWhenIdle,
   hydrateWhenVisible,
-  hydrateNever,
+  hydrateSsrOnly,
 } from "vue-lazy-hydration";
 import { toPascalCase } from "./../utils/cases";
 
@@ -33,7 +33,7 @@ import { toPascalCase } from "./../utils/cases";
 // https://gist.github.com/loilo/73c55ed04917ecf5d682ec70a2a1b8e2
 export default {
   name: "Dynamic",
-  
+
   inheritAttrs: false,
 
   props: {
@@ -83,7 +83,7 @@ export default {
     hydrateOnInteraction: hydrateOnInteraction,
     hydrateWhenIdle: hydrateWhenIdle,
     hydrateWhenVisible: hydrateWhenVisible,
-    hydrateNever: hydrateNever,
+    hydrateNever: hydrateSsrOnly,
   },
 };
 </script>
