@@ -63,7 +63,7 @@ export default {
     componentLoader() {
       const loaders = ["", ...this.$nuxtDynamic.prefixes]
         .map((prefix) => {
-          const name = `Lazy${prefix}${toPascalCase(this.name)}`;
+          const name = `Lazy${toPascalCase(prefix)}${toPascalCase(this.name)}`;
           return name in this.$nuxtDynamic.loaders
             ? this.$nuxtDynamic.loaders[name]
             : null;
