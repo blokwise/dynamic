@@ -7,13 +7,20 @@ category: Guide
 
 ## Props
 
-### `name`
+### `component`
 
 - **Type**: `String`
-- **Required**: `true`
 
 The name of the component which should be imported.
 If the component was initialized with a prefix in `@nuxt/components` config, it should be loaded as such. Nevertheless it is possible to **ommit the prefix to automatically detect the right component** _(if there are no conflincting names)_.
+
+<alert type="info">
+<b>
+<i class="font-light"><span class="font-bold">Heads up</span>: Starting with version <code>v1.4.0</code> the prop <code>component`</code> replaces the deprecated prop <code>name</code>.
+Passing the component name by using <code>name</code> still works through <code>$attrs.name</code> internally.
+However, this workaround will be removed in the next major version (<code>v.2.0.0+</code>).</i>
+</p>
+</alert>
 
 ### `hydration`
 
@@ -29,12 +36,12 @@ Use `NuxtDynamic` to **auto import any component** which is initialized through 
 
 ```vue
 <template>
-  <NuxtDynamic name="Logo" />
+  <NuxtDynamic component="Logo" />
 
   <NuxtDynamic
     v-for="(component, i) in ['Logo', 'Grid', 'Nav']"
     :key="i"
-    :name="component"
+    :component="component"
   />
 </template>
 ```
@@ -45,6 +52,6 @@ Use `LazyNuxtDynamic` if you want the component itself being imported lazily.
 
 ```vue
 <template>
-  <LazyNuxtDynamic name="Logo" />
+  <LazyNuxtDynamic component="Logo" />
 </template>
 ```

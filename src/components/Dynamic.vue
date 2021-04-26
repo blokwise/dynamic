@@ -37,9 +37,9 @@ export default {
   inheritAttrs: false,
 
   props: {
-    name: {
+    component: {
       type: String,
-      required: true,
+      default: null,
     },
     /**
      * options: [
@@ -58,6 +58,10 @@ export default {
   computed: {
     hydrate() {
       return this[`hydrate${this.hydration}`] ?? null;
+    },
+
+    name() {
+      return this.component ?? this.$attrs.name;
     },
 
     componentLoader() {

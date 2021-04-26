@@ -3,7 +3,7 @@
     <NuxtDynamic
       v-for="(item, i) in ['AwesomeFoo', 'awesome-bar']"
       :key="i"
-      :name="item"
+      :component="item"
       :tags="['page', 'article']"
     >
       <template v-slot:some-slot="slotData">

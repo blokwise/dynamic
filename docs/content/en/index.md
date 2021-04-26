@@ -5,7 +5,7 @@ position: 1
 category: ""
 features:
   - Extends nuxt/component
-  - Auto-loading of dynamic components
+  - Auto-importing of dynamic components
 ---
 
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
@@ -14,7 +14,7 @@ features:
 [Module]() for [NuxtJS](https://nuxtjs.org).
 
 <alert type="success">
-Let nuxt.js hydrate your dynamic components with a breeze - automagically.
+Let Nuxt auto-import your dynamic components with a breeze - automagically.
 </alert>
 
 ## Features
