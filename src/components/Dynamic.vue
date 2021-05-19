@@ -2,7 +2,10 @@
   <component
     v-if="lazyComponent"
     :is="lazyComponent"
-    v-bind="$attrs"
+    v-bind="{
+      ...$attrs,
+      component,
+    }"
     v-on="$listeners"
   >
     <!-- pass through normal slots -->
