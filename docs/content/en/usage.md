@@ -66,7 +66,7 @@ Use `LazyNuxtDynamic` if you want the component itself being imported lazily.
 
 ## Assign Ref to child component
 
-Use `componentRef` to assign a `ref` to the child component
+Use `componentRef` to assign a `ref` to the child component.
 
 ```vue
 <template>
