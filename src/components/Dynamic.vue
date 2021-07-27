@@ -7,6 +7,7 @@
       component,
     }"
     v-on="$listeners"
+    :ref="componentRef"
   >
     <!-- pass through normal slots -->
     <template v-for="(_, slotName) in $slots" v-slot:[slotName]>
@@ -42,6 +43,10 @@ export default {
   props: {
     component: {
       type: String,
+      default: null,
+    },
+    componentRef: {
+      type: String|Number,
       default: null,
     },
     /**
