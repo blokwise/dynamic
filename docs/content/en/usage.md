@@ -77,5 +77,5 @@ Use `componentRef` to assign a `ref` to the child component.
 This allows you to call methods on the child component or access its data:
 
 ```js
-this.$refs.logo.[0].$refs.logoChild
+this.$refs.logo.$refs.logoChild
 ```
