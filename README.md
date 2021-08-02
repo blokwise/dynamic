@@ -45,6 +45,13 @@ However, this workaround will be removed in the next major version (`v.2.0.0+`).
 
 The hydration prop controls **when / how the component will be hydrated**. The hydration is implemented with `vue-lazy-hydration` thanks to [Markus Oberlehner](https://github.com/maoberlehner/vue-lazy-hydration).
 
+### `componentRef`
+
+- **Type**: `String` or `Number`
+- **Default**: `null`
+
+The componentRef prop adds a reference to the child component.
+
 ## Usage
 
 ### Use dynamic component

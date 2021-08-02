@@ -30,6 +30,13 @@ However, this workaround will be removed in the next major version (<code>v.2.0.
 
 The hydration prop controls **when / how the component will be hydrated**. The hydration is implemented with `vue-lazy-hydration` thanks to [Markus Oberlehner](https://github.com/maoberlehner/vue-lazy-hydration).
 
+### `componentRef`
+
+- **Type**: `String` or `Number`
+- **Default**: `null`
+
+The componentRef prop adds a reference to the child component.
+
 ## NuxtDynamic
 
 Use `NuxtDynamic` to **auto import any component** which is initialized through `@nuxt/components` _dynamically_.
@@ -54,4 +61,21 @@ Use `LazyNuxtDynamic` if you want the component itself being imported lazily.
 <template>
   <LazyNuxtDynamic component="Logo" />
 </template>
+```
+
+
+## Assign Ref to child component
+
+Use `componentRef` to assign a `ref` to the child component.
+
+```vue
+<template>
+  <NuxtDynamic component="Logo" componentRef="logoChild" ref="logo" />
+</template>
+```
+
+This allows you to call methods on the child component or access its data:
+
+```js
+this.$refs.logo.$refs.logoChild
 ```
