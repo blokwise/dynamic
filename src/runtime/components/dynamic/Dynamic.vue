@@ -20,8 +20,8 @@
 </template>
 
 <script setup>
-import { useSwitchCases } from './../composables/useSwitchCases'
-import { useHydrate } from './../composables/useHydrate'
+import { useSwitchCases } from '../../composables/useSwitchCases'
+import { useHydrate } from '../../composables/useHydrate'
 import { useAttrs, computed, ref, watch } from '#imports'
 
 const { toPascalCase } = useSwitchCases()
@@ -117,7 +117,7 @@ watch(
         if (c.componentNames.includes(componentName.value)) {
           return c[componentName.value]
         }
-        return c.NotFound
+        return c.NuxtDynamicComponentNotFound
       })
     )
   },
