@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "@nuxtjs/eslint-config-typescript"
+  ],
+
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "off"
+    ],
+    "vue/multi-word-component-names": 0,
+    "prettier/prettier": ["error", { "singleQuote": true, "semi": false }],
+    "vue/require-component-is": "off",
+    "vue/no-v-html": "off",
+    "nuxt/no-cjs-in-config": "off",
+    "no-console": "off",
+    "no-debugger": "off"
+  }
+}
