@@ -1,6 +1,6 @@
 {
   "name": "@blokwise/dynamic",
-  "version": "2.0.0-1",
+  "version": "1.5.0",
   "description": "Load components initialized through @nuxt/components dyamically.",
   "author": "Julian Derungs <julian.derungs@deepbase.ch>",
   "license": "MIT",
@@ -33,8 +33,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "lint": "eslint . --ext .ts,.vue",
     "format-check": "npx prettier --check ./",
-    "format-write": "npx prettier --write ./",
-    "test": "jest"
+    "format-write": "npx prettier --write ./"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.6",
