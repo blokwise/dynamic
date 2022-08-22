@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2>ComponentB</h2>
-    <slot />
+    <h2>AwesomeFoo</h2>
   </div>
 </template>

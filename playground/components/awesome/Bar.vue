@@ -1,19 +1,19 @@
 <template>
   <div>
-    <h1>Content of Bar</h1>
+    <h2>AwesomeBar</h2>
     <slot name="some-slot" :tags="tags" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "Bar",
+  name: 'Bar',
 
   props: {
     tags: {
       type: Array,
-      default: () => [],
-    },
-  },
-};
+      default: () => []
+    }
+  }
+}
 </script>

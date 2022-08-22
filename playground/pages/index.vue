@@ -1,27 +1,26 @@
 <template>
   <div>
-    <h1>index.vue</h1>
+    <h1>index</h1>
+
+    <!-- test all different component name cases -->
     <NuxtDynamic
-      is-component="ComponentA"
-      :on="on"
+      v-for="(item, i) in [
+        'PascalCase',
+        'snake-case',
+        'kebab-case',
+      ]"
+      :key="i"
+      :is-component="item"
     />
 
+    <!-- test fallback for old component name configuration (attrs.component is used) -->
     <NuxtDynamic
-      is-component="component-b"
-      :hydration="{ type: 'whenIdle' }"
-      @submit="onSubmit"
-    >
-      <span>passed through slot</span>
-    </NuxtDynamic>
+      v-for="(item, i) in [
+        'AwesomeFoo',
+        'awesome-bar',
+      ]"
+      :key="i"
+      :component="item"
+    />
   </div>
 </template>
-
-<script setup>
-const on = ref(['click'])
-
-onMounted(() => {
-  setTimeout(() => {
-    on.value.push('mouseover')
-  }, 10000)
-})
-</script>
