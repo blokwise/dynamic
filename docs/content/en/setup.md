@@ -36,4 +36,16 @@ Then, add `@blokwise/dynamic` to the `modules` section of `nuxt.config.js`:
 }
 ```
 
+Use a different prefix for your `Dynamic` component if you like (default is `NuxtDynamic`). e.g. if you want to use the component as `HyperDynamic`:
+
+```js[nuxt.config.js]
+{
+  modules: [
+    '@blokwise/dynamic', {
+      prefix: 'Hyper'
+    }
+  ],
+}
+```
+
 Check the [Nuxt.js documentation](https://nuxtjs.org/guides/configuration-glossary/configuration-modules) for more information about installing and using modules in Nuxt.js.
