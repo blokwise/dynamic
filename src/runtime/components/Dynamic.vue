@@ -22,7 +22,7 @@
 <script setup>
 import { useSwitchCases } from './../composables/useSwitchCases'
 import { useHydrate } from './../composables/useHydrate'
-import { useAttrs, computed, ref } from '#imports'
+import { useAttrs, computed, ref, watch } from '#imports'
 
 const { toPascalCase } = useSwitchCases()
 
