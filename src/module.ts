@@ -40,8 +40,8 @@ export default defineNuxtModule<ModuleOptions>({
       dirs.push(resolve(runtimeDir, 'composables'))
     })
 
-    nuxt.hook('components:extend', (components) => {
-      if (options.withConsole) {
+    if (options.withConsole) {
+      nuxt.hook('components:extend', (components) => {
         logger.success({
           message: 'auto import for dynamic components ready',
           additional: `Module @blokwise/dynamic successfully registered.\nReady to auto import ${
@@ -49,7 +49,7 @@ export default defineNuxtModule<ModuleOptions>({
           } items as dynamic components lazily.\nRead docs: https://dynamic.blokwise.io`,
           badge: true
         })
-      }
-    })
+      })
+    }
   }
 })
