@@ -44,7 +44,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Add blokwise dynamic composables
-    nuxt.hook('autoImports:dirs', (dirs) => {
+    nuxt.hook('imports:dirs', (dirs) => {
       dirs.push(resolve(runtimeDir, 'composables'))
     })
 
