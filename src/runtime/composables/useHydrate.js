@@ -4,8 +4,7 @@ import {
   hydrateWhenVisible,
   hydrateOnInteraction
 } from 'vue3-lazy-hydration'
-import { useDetectTypes } from './useDetectTypes'
-import { defineAsyncComponent, markRaw } from '#imports'
+import { defineAsyncComponent, markRaw, useDetectTypes } from '#imports'
 
 export const useHydrate = (
   hydration = { never: false, whenIdle: null, whenVisible: null, on: null }

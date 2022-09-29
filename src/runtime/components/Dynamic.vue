@@ -20,9 +20,7 @@
 </template>
 
 <script setup>
-import { useSwitchCases } from './../composables/useSwitchCases'
-import { useHydrate } from './../composables/useHydrate'
-import { useAttrs, computed, ref, watch } from '#imports'
+import { useAttrs, computed, ref, watch, useSwitchCases, useHydrate } from '#imports'
 
 const { toPascalCase } = useSwitchCases()
 
