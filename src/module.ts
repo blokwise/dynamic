@@ -27,11 +27,19 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
-    // add blokwise dynamic components
+    // add blokwise dynamic component
     nuxt.hook('components:dirs', (dirs) => {
       dirs.push({
-        path: resolve(runtimeDir, 'components'),
+        path: resolve(runtimeDir, 'components', 'dynamic'),
         prefix: options.prefix
+      })
+    })
+
+    // add blokwise dynamic fallback component
+    nuxt.hook('components:dirs', (dirs) => {
+      dirs.push({
+        path: resolve(runtimeDir, 'components', 'fallback'),
+        prefix: 'NuxtDynamicComponent'
       })
     })
 

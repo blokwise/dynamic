@@ -115,7 +115,7 @@ watch(
         if (c.componentNames.includes(componentName.value)) {
           return c[componentName.value]
         }
-        return c.NotFound
+        return c.NuxtDynamicComponentNotFound
       })
     )
   },
