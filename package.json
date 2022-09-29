@@ -1,6 +1,6 @@
 {
   "name": "@blokwise/dynamic",
-  "version": "2.0.0-4",
+  "version": "2.0.0-5",
   "description": "Load components initialized through @nuxt/components dyamically.",
   "author": "Julian Derungs <julian.derungs@deepbase.ch>",
   "license": "MIT",
