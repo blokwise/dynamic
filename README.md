@@ -56,7 +56,7 @@ The componentRef prop adds a reference to the child component.
 
 ### Use dynamic component
 
-The dynamic component will be loaded as `NuxtDynamic`. The component will be loaded wheter you pass the name prefix or not. So in the following case it could load a component called `Logo` without prefix or a component called `BlokwiseLogo` which is prefixed with `Blokwise` according to `@nuxt/components` configuration of your project / third party libraries.
+The dynamic component will be loaded as `NuxtDynamic`. The component will be loaded whether you pass the name prefix or not. So in the following case it could load a component called `Logo` without prefix or a component called `BlokwiseLogo` which is prefixed with `Blokwise` according to `@nuxt/components` configuration of your project / third party libraries.
 
 ```vue
 <template>
